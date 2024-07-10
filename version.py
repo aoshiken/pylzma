@@ -49,7 +49,7 @@ def call_git_describe(abbrev=4):
         version = line.strip()
         if version[:1] == 'v':
             version = version[1:]
-        return version
+        return version.replace(b'-',b'+',1)
 
     except:
         return None
